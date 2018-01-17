@@ -86,7 +86,7 @@ if __name__=="__main__":
                         if fast_process.poll()==False:
                             fast_process=subprocess.Popen(["python","code/client.py","fast"])
                             print "fast process started"
-                elif interface_num=="3":
+                elif interface_num=="0":
                     print "no_connection"
                     commands.getstatusoutput("kill -2 %s" %fast_process.pid)
                     commands.getstatusoutput("kill -2 %s" %slow_process.pid)
