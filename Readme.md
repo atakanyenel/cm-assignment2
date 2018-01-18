@@ -9,11 +9,11 @@ This is the code for assignment 2. To set the system up, use `sh setup.sh`. It w
 
 - code/server.py : This code runs in mininet host h1. This code works outside mininet environment. It creates a server that listens on port *5555*. You can connect to it using `telnet localhost 5555`, when connected , the server first expects a number, which states which from which byte of the file it should start sending. 
 
-- sim/fast_server.py : This file is to simulate the fast connection between the client and the server. This is not for mininet. It listens on port *1111*, has a delay of 0.1 second between sending chunks.
+- sim/fast_server.py : This file is to simulate the fast connection between the client and the server. This is not for mininet. It listens on port *1111*, has a delay of 0.2 second between sending chunks.
 
-- sim/slow_server.py : This file simulates the slow connection between client and server. Listens on *5555*. It has a delay of 0.2 second between sending chunks.
+- sim/slow_server.py : This file simulates the slow connection between client and server. Listens on *5555*. It has a delay of 0.4 second between sending chunks.
 
-- sim/local_client.py : This simulates the client on mininet. It gets a random number every 3 seconds between 1-3. If number is 1, It connects to slow server, if 2, to fast server, if 3 , no connection. It highly uses shell commands, so designed for Unix. **The random command on line 62 is MAC OS specific , to run it in Linux change it to `shuf -i 1-3 -n 1`.**
+- sim/local_client.py : This simulates the client on mininet. It gets a random number every 3 seconds between 0-2. If number is 1, It connects to slow server, if 2, to fast server, if 0 , no connection. It highly uses shell commands, so designed for Unix.
 ## Running the simulation
 There is a simulation, which I used to debug without mininet. To run the simulation , go to *sim* folder, open 3 different terminals to see the effects and run `python fast_server.py`, `python slow_server.py`, `python local_client.py main` on 3 different terminals. **Make sure that you are inside *sim* folder because Python reads the file to its relative path.**
 
