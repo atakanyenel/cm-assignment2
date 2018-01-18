@@ -36,7 +36,7 @@ def handle_client(client_socket):
         #print "sending"
        # time.sleep(0)
             client_socket.send(l)
-            time.sleep(0.2)
+            time.sleep(0.4)
             l=file_to_send.read(1024)
         file_to_send.close()
 while True:

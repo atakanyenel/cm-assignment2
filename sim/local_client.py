@@ -8,7 +8,7 @@ import commands
 import threading
 import time
 import subprocess
-
+import random
 HOST="localhost"
 SLOW_PORT=5555
 FAST_PORT=1111
@@ -59,9 +59,9 @@ if __name__=="__main__":
             fast_process=subprocess.Popen(["echo","fast"])
             while True:
                 #interface_num=commands.getstatusoutput("iwconfig |grep 'ssid' | wc -l")[1][-1:]
-                interface_num=commands.getstatusoutput("echo $[RANDOM%3+1]" )#[1][-1:]
+                interface_num=str(random.randint(0,2))#[1][-1:]
                 print interface_num
-                interface_num=interface_num[1][-1:]
+                #interface_num=interface_num[1][-1:]
 
                 if interface_num=="1": # only slow interface
                     print "slow"
@@ -90,7 +90,7 @@ if __name__=="__main__":
                         if fast_process.poll()==False:
                             fast_process=subprocess.Popen(["python","local_client.py","fast"])
                             
-                elif interface_num=="3":
+                elif interface_num=="0":
                     print "no_connection"
                     commands.getstatusoutput("kill -2 %s" %fast_process.pid)
                     
