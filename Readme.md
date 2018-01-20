@@ -15,7 +15,7 @@ This is the code for assignment 2. To set the system up, use `sh setup.sh`. It w
 
 - sim/local_client.py : This simulates the client on mininet. It gets a random number every 3 seconds between 0-2. If number is 1, It connects to slow server, if 2, to fast server, if 0 , no connection. It highly uses shell commands, so designed for Unix.
 ## Running the simulation
-There is a simulation, which I used to debug without mininet. To run the simulation , go to *sim* folder, open 3 different terminals to see the effects and run `python fast_server.py`, `python slow_server.py`, `python local_client.py main` on 3 different terminals. **Make sure that you are inside *sim* folder because Python reads the file to its relative path.**
+There is a simulation, which we used to debug without mininet. To run the simulation , go to *sim* folder, open 3 different terminals to see the effects and run `python fast_server.py`, `python slow_server.py`, `python local_client.py main` on 3 different terminals. **Make sure that you are inside *sim* folder because Python reads the file to its relative path.**
 
 ## Running in Mininet
 The mininet files are inside *code* directory.
