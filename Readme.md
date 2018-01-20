@@ -5,7 +5,7 @@ This is the code for assignment 2. To set the system up, use `sh setup.sh`. It w
 ## Structure
 - setup.sh : This file downloads the big.txt file that we are using for data transfer. When you clone the project for the first time ,run this with `sh setup.sh`. Running it multiple times won't do anything if *big.txt* is already present.
 
-- code/client.py : This is the code that runs in mininet sta1. **This code won't work outside mininet environment.** It works likes this: Every 3 seconds, check which interfaces I'm connected. If I'm connected to 1 interface, run the the code with slow server IP by calling this python file with a different argument. If connected to two interfaces, kill the slow server process and run the fast server process by calling this python file with different argument. If there are no interfaces, kill all processes just to make sure.  
+- code/client.py : This is the code that runs in mininet sta1. **This code won't work outside mininet environment.** It works likes this: Every 3 seconds, check which interfaces it's connected. If it's connected to 1 interface, run the the code with slow server IP by calling this python file with a different argument. If connected to two interfaces, kill the slow server process and run the fast server process by calling this python file with different argument. If there are no interfaces, kill all processes just to make sure.  
 
 - code/server.py : This code runs in mininet host h1. This code works outside mininet environment. It creates a server that listens on port *5555*. You can connect to it using `telnet localhost 5555`, when connected , the server first expects a number, which states which from which byte of the file it should start sending. 
 
